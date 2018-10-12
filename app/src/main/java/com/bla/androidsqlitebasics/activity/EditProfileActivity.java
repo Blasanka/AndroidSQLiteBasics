@@ -2,12 +2,11 @@ package com.bla.androidsqlitebasics.activity;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -97,7 +96,8 @@ public class EditProfileActivity extends AppCompatActivity {
                         if (cursor.getString(4) != null) {
                             if (cursor.getString(4).equals("Male")) {
                                 genderRadio.check(R.id.idMaleRadio);
-                            } else genderRadio.check(R.id.idFemaleRadio);
+                            } else if (cursor.getString(4).equals("Female"))
+                                genderRadio.check(R.id.idFemaleRadio);
                         }
                     }
                 }
@@ -121,6 +121,12 @@ public class EditProfileActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(EditProfileActivity.this, "User not in the table!", Toast.LENGTH_SHORT).show();
                 }
+
+                //clear out editText after deleted
+                usernameEt.setText("");
+                passwordEt.setText("");
+                dobEt.setText("");
+                genderRadio.clearCheck();
             }
         });
     }
