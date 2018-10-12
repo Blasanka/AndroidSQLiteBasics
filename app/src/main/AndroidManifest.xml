@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name="com.bla.androidsqlitebasics.activity.ProfileManagementActivity" />
-        <activity android:name="com.bla.androidsqlitebasics.activity.EditProfileActivity"></activity>
+        <activity android:name="com.bla.androidsqlitebasics.activity.EditProfileActivity" />
     </application>
 
 </manifest>
