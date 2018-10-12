@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">AndroidSQLiteBasics</string>
+    <string name="username_tv">Username:</string>
+    <string name="password_label_tv">Password:</string>
+    <string name="login_bt_label">Login</string>
+    <string name="register_bt_label">Register</string>
+    <string name="updadte_profile_label">Update Profile</string>
+    <string name="birth_label_tv">Date of Birth</string>
+    <string name="birth_label">Date Of Birth</string>
+    <string name="gender_label">Gender</string>
+    <string name="male_radioLlabel">Male</string>
+    <string name="female_radio_label">Female</string>
+    <string name="edit_bt_label">Edit</string>
+    <string name="delete_bt_label">Delete</string>
+    <string name="search_bt_label">Search</string>
+</resources>

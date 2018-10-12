@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="labels_size">18sp</dimen>
+    <dimen name="label_width">130dp</dimen>
+    <dimen name="label_height">30dp</dimen>
+    <dimen name="layout_margin_horizontal">16dp</dimen>
+    <dimen name="username_label_margin_top">164dp</dimen>
+    <dimen name="username_et_margin_start">8dp</dimen>
+    <dimen name="username_et_margin_top">156dp</dimen>
+    <dimen name="password_label_margin_top">32dp</dimen>
+    <dimen name="password_et_margin_top">12dp</dimen>
+    <dimen name="bt_width">150dp</dimen>
+    <dimen name="log_bt_margin_top">60dp</dimen>
+    <dimen name="reg_bt_margin_top">55dp</dimen>
+</resources>

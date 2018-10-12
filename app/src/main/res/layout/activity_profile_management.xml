@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
+    tools:context="com.bla.androidsqlitebasics.activity.ProfileManagementActivity">
+
+    <TextView
+        android:id="@+id/usernameLabelTv"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="92dp"
+        android:text="@string/username_tv"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idUsernameEt"
+        android:layout_width="206dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/username_et_margin_start"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:hint="@string/username_tv"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintStart_toEndOf="@id/usernameLabelTv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/passwordLabelTv"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/password_label_tv"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/birthLabelTv" />
+
+    <EditText
+        android:id="@+id/idPasswordEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/username_et_margin_start"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/password_label_tv"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toEndOf="@id/passwordLabelTv"
+        app:layout_constraintTop_toBottomOf="@+id/idBirthdayEt" />
+
+    <TextView
+        android:id="@+id/birthLabelTv"
+        android:layout_width="129dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/birth_label"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintTop_toBottomOf="@+id/usernameLabelTv"
+        tools:layout_editor_absoluteX="4dp" />
+
+    <EditText
+        android:id="@+id/idBirthdayEt"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="@string/birth_label"
+        android:inputType="date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/birthLabelTv"
+        app:layout_constraintTop_toBottomOf="@+id/idUsernameEt" />
+
+    <TextView
+        android:id="@+id/genderLabelTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/gender_label"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLabelTv" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="207dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toEndOf="@+id/genderLabelTv"
+        app:layout_constraintTop_toBottomOf="@+id/idPasswordEt">
+
+        <RadioButton
+            android:id="@+id/idMaleRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male_radioLlabel" />
+
+        <RadioButton
+            android:id="@+id/idFemaleRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/female_radio_label" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/idUpdateBt"
+        android:layout_width="@dimen/bt_width"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/updadte_profile_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.9" />
+</android.support.constraint.ConstraintLayout>

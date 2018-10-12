@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginHorizontal="@dimen/layout_margin_horizontal"
+    tools:context="com.bla.androidsqlitebasics.activity.HomeActivity">
+
+    <TextView
+        android:id="@+id/usernameLabelTv"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginTop="@dimen/username_label_margin_top"
+        android:text="@string/username_tv"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/idUsernameEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/username_et_margin_start"
+        android:layout_marginTop="@dimen/username_et_margin_top"
+        android:ems="10"
+        android:hint="@string/username_tv"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@id/usernameLabelTv"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/passwordLabelTv"
+        android:layout_width="@dimen/label_width"
+        android:layout_height="@dimen/label_height"
+        android:layout_marginTop="@dimen/password_label_margin_top"
+        android:text="@string/password_label_tv"
+        android:textSize="@dimen/labels_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usernameLabelTv" />
+
+    <EditText
+        android:id="@+id/idPasswordEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/username_et_margin_start"
+        android:layout_marginTop="@dimen/password_et_margin_top"
+        android:ems="10"
+        android:hint="@string/password_label_tv"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.384"
+        app:layout_constraintStart_toEndOf="@id/passwordLabelTv"
+        app:layout_constraintTop_toBottomOf="@id/idUsernameEt" />
+
+    <Button
+        android:id="@+id/idLoginBt"
+        android:layout_width="@dimen/bt_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/log_bt_margin_top"
+        android:text="@string/login_bt_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/passwordLabelTv"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <Button
+        android:id="@+id/idRegisterBt"
+        android:layout_width="@dimen/bt_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/username_et_margin_start"
+        android:layout_marginTop="@dimen/reg_bt_margin_top"
+        android:text="@string/register_bt_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.395"
+        app:layout_constraintStart_toEndOf="@id/idLoginBt"
+        app:layout_constraintTop_toBottomOf="@id/idPasswordEt"
+        app:layout_constraintVertical_bias="0.028" />
+</android.support.constraint.ConstraintLayout>
