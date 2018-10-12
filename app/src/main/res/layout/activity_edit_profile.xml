@@ -19,7 +19,7 @@
 
     <EditText
         android:id="@+id/idUsernameEt"
-        android:layout_width="wrap_content"
+        android:layout_width="203dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/username_et_margin_start"
         android:layout_marginTop="44dp"
@@ -27,15 +27,29 @@
         android:hint="@string/username_tv"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/usernameLabelTv"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/idSearchBt"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/search_bt_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idUsernameEt" />
 
     <TextView
         android:id="@+id/passwordLabelTv"
         android:layout_width="@dimen/label_width"
         android:layout_height="@dimen/label_height"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="40dp"
         android:text="@string/password_label_tv"
         android:textSize="@dimen/labels_size"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,15 +57,15 @@
 
     <EditText
         android:id="@+id/idPasswordEt"
-        android:layout_width="wrap_content"
+        android:layout_width="205dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/username_et_margin_start"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/password_label_tv"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.941"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@id/passwordLabelTv"
         app:layout_constraintTop_toBottomOf="@+id/idBirthdayEt" />
 
@@ -59,33 +73,33 @@
         android:id="@+id/birthLabelTv"
         android:layout_width="129dp"
         android:layout_height="25dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="32dp"
         android:text="@string/birth_label"
         android:textSize="@dimen/labels_size"
-        app:layout_constraintTop_toBottomOf="@+id/usernameLabelTv"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idSearchBt" />
 
     <EditText
         android:id="@+id/idBirthdayEt"
-        android:layout_width="215dp"
+        android:layout_width="209dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="5dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="@string/birth_label"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/birthLabelTv"
-        app:layout_constraintTop_toBottomOf="@+id/idUsernameEt" />
+        app:layout_constraintTop_toBottomOf="@+id/idSearchBt" />
 
     <TextView
         android:id="@+id/genderLabelTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="48dp"
         android:text="@string/gender_label"
         android:textSize="@dimen/labels_size"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +111,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -122,37 +136,28 @@
         android:id="@+id/idEditBt"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
         android:text="@string/edit_bt_label"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genderLabelTv" />
+        app:layout_constraintTop_toBottomOf="@+id/genderLabelTv"
+        app:layout_constraintVertical_bias="0.329" />
 
     <Button
         android:id="@+id/idDeleteBt"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/delete_bt_label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/idEditBt"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
-
-    <Button
-        android:id="@+id/idSearchBt"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/search_bt_label"
+        android:layout_marginTop="32dp"
+        android:text="@string/delete_bt_label"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/idEditBt"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/idEditBt"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="0.312" />
 </android.support.constraint.ConstraintLayout>
