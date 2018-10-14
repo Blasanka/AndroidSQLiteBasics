@@ -5,9 +5,18 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
-import static com.bla.androidsqlitebasics.database.UserProfile.User.*;
+import com.bla.androidsqlitebasics.model.User;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static com.bla.androidsqlitebasics.database.UserProfile.User.COLUMN_DOB;
+import static com.bla.androidsqlitebasics.database.UserProfile.User.COLUMN_GENDER;
+import static com.bla.androidsqlitebasics.database.UserProfile.User.COLUMN_PASSWORD;
+import static com.bla.androidsqlitebasics.database.UserProfile.User.COLUMN_USERNAME;
+import static com.bla.androidsqlitebasics.database.UserProfile.User.TABLE_NAME;
+import static com.bla.androidsqlitebasics.database.UserProfile.User._ID;
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -86,7 +95,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return db.update(TABLE_NAME, cv, whereClause, selectionArgs) > 0;
     }
 
-    public Cursor readAllInfor() {
+    public List<User> readAllInfor() {
         SQLiteDatabase db = getReadableDatabase();
 
         String[] projection = {
@@ -106,11 +115,20 @@ public class DBHelper extends SQLiteOpenHelper {
                 null,
                 null);
 
-        //if the user count greater than(shoul be equal to if properly check) 1 user exists and return true
-        return cursor;
+        List<User> users = new ArrayList();
+        while (cursor.moveToNext()) {
+            User user = new User(cursor.getLong(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4));
+            users.add(user);
+        }
+        cursor.close();
+        return users;
     }
 
-    public Cursor readAllInfor(long userId) {
+    public User readAllInfor(long userId) {
         SQLiteDatabase db = getReadableDatabase();
 
         //retrieve the user using primary key
@@ -118,9 +136,16 @@ public class DBHelper extends SQLiteOpenHelper {
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE "+ _ID + " = ? ";
 
         Cursor cursor = db.rawQuery(query, selectionArgs);
-
+        User u = new User();
+        if (cursor.moveToFirst()) {
+            u = new User(cursor.getLong(0),
+                    cursor.getString(1),
+                    cursor.getString(2),
+                    cursor.getString(3),
+                    cursor.getString(4));
+        }
         //if the user count greater than(shoul be equal to if properly check) 1 user exists and return true
-        return cursor;
+        return u;
     }
 
     public boolean deleteInfo(long userId) {

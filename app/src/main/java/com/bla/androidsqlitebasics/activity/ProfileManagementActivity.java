@@ -1,16 +1,15 @@
 package com.bla.androidsqlitebasics.activity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 
 import com.bla.androidsqlitebasics.database.DBHelper;
+import com.bla.androidsqlitebasics.model.User;
 import com.live.sinhalacoder.androidsqlitebasics.R;
 
 public class ProfileManagementActivity extends AppCompatActivity {
@@ -46,18 +45,16 @@ public class ProfileManagementActivity extends AppCompatActivity {
             userId = intent.getLongExtra("userId", -1);
         }
 
-        //get logged in or registered user data from table and bind to editTexts
-        Cursor cursor = mHelper.readAllInfor(userId);
-        if (cursor.moveToFirst()) {
-            usernameEt.setText(cursor.getString(1));
-            passwordEt.setText(cursor.getString(2));
-            dobEt.setText(cursor.getString(3));
-            if (cursor.getString(4) != null) {
-                if (cursor.getString(4).equals("Male")) {
-                    genderRadio.check(R.id.idMaleRadio);
-                } else {
-                    genderRadio.check(R.id.idFemaleRadio);
-                }
+        //get logged in or registered user data user object that we retrive using readAllInfor()
+        User u = mHelper.readAllInfor(userId);
+        usernameEt.setText(u.getUsername());
+        passwordEt.setText(u.getPassword());
+        dobEt.setText(u.getDob());
+        if (u.getGender() != null) {
+            if (u.getGender().equals("Male")) {
+                genderRadio.check(R.id.idMaleRadio);
+            } else if (u.getGender().equals("Female")) {
+                genderRadio.check(R.id.idFemaleRadio);
             }
         }
         //if user clicked edit button

@@ -1,7 +1,6 @@
 package com.bla.androidsqlitebasics.activity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,7 +10,10 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.bla.androidsqlitebasics.database.DBHelper;
+import com.bla.androidsqlitebasics.model.User;
 import com.live.sinhalacoder.androidsqlitebasics.R;
+
+import java.util.List;
 
 public class EditProfileActivity extends AppCompatActivity {
 
@@ -80,28 +82,26 @@ public class EditProfileActivity extends AppCompatActivity {
                 //get typed username to search
                 String username = usernameEt.getText().toString();
 
-                //get current user values to textFields from readInfo
-                Cursor cursor = mHelper.readAllInfor();
+                List<User> users = mHelper.readAllInfor();
 
-                //TODO: I think this way is not the perfect since, we can directly search using the query
-                while (cursor.moveToNext()) {
+                //we dont have loop through to find matching username if we send username as a parameter to the dbhelper and check for that user inside readAllInfo
+                for (User u : users) {
                     //if typed username equals with table value
-                    if (username.equals(cursor.getString(1))) {
+                    if (username.equals(u.getUsername())) {
                         //get the user id to update and delete
-                        userId = cursor.getLong(0);
+                        userId = u.getId();
                         //if there is any matching username with db user table get those values and place into textfields
-                        passwordEt.setText(cursor.getString(2));
-                        dobEt.setText(cursor.getString(3));
+                        passwordEt.setText(u.getPassword());
+                        dobEt.setText(u.getDob());
 
-                        if (cursor.getString(4) != null) {
-                            if (cursor.getString(4).equals("Male")) {
+                        if (u.getGender() != null) {
+                            if (u.getGender().equals("Male")) {
                                 genderRadio.check(R.id.idMaleRadio);
-                            } else if (cursor.getString(4).equals("Female"))
+                            } else if (u.getGender().equals("Female"))
                                 genderRadio.check(R.id.idFemaleRadio);
                         }
                     }
                 }
-                cursor.close();
 
                 //dumb trick to display if user not exists
                 if (passwordEt.getText().toString().equals("")) {
